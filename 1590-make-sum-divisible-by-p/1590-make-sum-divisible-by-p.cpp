@@ -14,7 +14,6 @@ public:
             total_sum%=p;
             prefix.push_back(total_sum);
         }
-        cout << "total_sum%p is " << total_sum << endl;
         INT MIN = nums.size();
         for(int i=1;i<nums.size();i++){
             INT new_rem = prefix[i]%p;
@@ -26,7 +25,6 @@ public:
                 INT index = rem[val];
                 INT new_min = (i-index);
                 MIN = min(MIN,new_min);
-                cout << "prev_index is " << index << " new_index is " << i << " new_min is " << new_min << " val is " << val << " new_rem is " << new_rem << endl;
                 rem[new_rem] = i;
             }
         }
