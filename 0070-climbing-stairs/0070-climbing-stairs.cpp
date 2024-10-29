@@ -1,18 +1,17 @@
 class Solution {
 public:
     int climbStairs(int n) {
-        if(n==1)
-        {
-            return 1;
+        if(n<=3){
+            return n;
         }
-        int array[n+1];
-        array[0] = 0;
-        array[1] = 1;
-        array[2] = 2;
-        for(int i=3;i<=n;i++)
-        {
-            array[i] = array[i-1]+array[i-2];
+        vector<int> dp(n+1,0);
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 3;
+        for(int i=4;i<=n;i++){
+            dp[i] = dp[i-1] + dp[i-2];
         }
-        return array[n];
+        return dp[n];
     }
 };
