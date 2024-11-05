@@ -42,7 +42,6 @@ public:
         if(min_i==-1 && min_j==-1){
             return "";
         }
-        cout << min_i << " " << min_j << endl;
         return s.substr(min_i,min_j-min_i+1);
     }
 };
